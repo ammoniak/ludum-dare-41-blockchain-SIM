@@ -1,0 +1,61 @@
+body {
+    transform: scale(0.7);
+    transform-origin: 0 0;
+ }
+
+div {
+    box-sizing: border-box;
+  }
+  .wrapper {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    background: white;
+    display: inline-block;
+  }
+  
+  .pie {
+    width: 50%;
+    height: 100%;
+    transform-origin: 100% 50%;
+    position: absolute;
+    background: #80c;
+    border: 5px solid rgba(0,0,0,0.4);
+  }
+  
+  .spinner {
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
+    z-index: 200;
+    border-right: none;
+    animation: rota 3s linear infinite;
+  }
+  
+  .filler {
+    border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+    z-index: 100;
+    border-left: none;
+    animation: opa 3s steps(1, end) infinite reverse;
+    left: 50%;
+    opactity: 0;
+  }
+ .wrapper  .noanim{
+      animation: none;
+  }
+  .mask {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    z-index: 300;
+    opacity: 1;
+    background: inherit;
+    animation: opa 3s steps(1, end) infinite;
+  }
+  
+  @keyframes rota {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes opa {
+    0% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+  </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+    <h1>Blockchain Simulator</h1>
+    <div id="content">
+        <ul class="list-group">
+            <li class="list-group-item">
+                    <button class="btn" id="toggleRunning">Start</button></li>
+                    <li class="list-group-item"> Hours: <span  id="timer">0</span>
+                        <div class="wrapper">
+                                <div class="spinner pie"></div>
+                                <div class="filler pie"></div>
+                                <div class="mask"></div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">Price: <span  id="price">0</span> USD/BTC
+                        <div class="ct-chart"></div>
+
+                    </li>
+                    <li class="list-group-item">Money: <span  id="money">0</span> $</li>
+                    <li class="list-group-item">Coins: <span  id="btc">0</span> BTC</li>
+                    <li class="list-group-item"> <div class="form-inline">
+                      <label for="sellBTC">Change BTC to $ </label>
+                      <input type="number"
+                        class="form-control" name="" id="sellBTCAmount" aria-describedby="helpId" placeholder="" value="0">
+                        <button type="button" class="btn btn-primary" id="sellBTC">Change</button>
+                    </div>
+                    </li>
+                    <li class="list-group-item"> <div class="form-inline">
+                      <label for="buyBTC">Change  $ to BTC </label>
+                      <input type="number"
+                        class="form-control" name="" id="buyBTCAmount" aria-describedby="helpId" placeholder="" value="0">
+                        <button type="button" class="btn btn-primary" id="buyBTC">Change</button>
+                    </div>
+                    </li>
+        </ul>
+        <h2>Mining</h2>
+
+        <ul class="list-group">
+                <li class="list-group-item">
+                        <h3>PC</h3>
+                        PCs available: <span id="pcAvailable">0</span>
+                        <div class="btn-group" role="group" aria-label="">
+                    <button class="btn btn-primary" id="buyPC">Buy PC</button>
+                    <button class="btn btn-warning" id="sellPC">Sell PC</button>
+                </div><br><br>
+                    PCs running: <span id="pcRunning">0</span>
+                    <div class="btn-group" role="group" aria-label="">
+                        <button type="button" class="btn btn-primary" id="startPC">Start PC</button>
+                        <button type="button" class="btn btn-warning" id="stopPC">Stop PC</button>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                        <h3>Mining PC</h3>
+                        Mining PCs available: <span id="MiningPCAvailable">0</span>
+                        <div class="btn-group" role="group" aria-label="">
+                    <button class="btn btn-primary" id="buyMiningPC">Buy Mining PC</button>
+                    <button class="btn btn-warning" id="sellMiningPC">Sell Mining PC</button>
+                </div><br><br>
+                    Mining PCs running: <span id="MiningPCRunning">0</span>
+                    <div class="btn-group" role="group" aria-label="">
+                        <button type="button" class="btn btn-primary" id="startMiningPC">Start Mining PC</button>
+                        <button type="button" class="btn btn-warning" id="stopMiningPC">Stop Mining PC</button>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                        <h3>ASICS</h3>
+                        ASICSs available: <span id="ASICSAvailable">0</span>
+                        <div class="btn-group" role="group" aria-label="">
+                    <button class="btn btn-primary" id="buyASICS">Buy ASICS</button>
+                    <button class="btn btn-warning" id="sellASICS">Sell ASICS</button>
+                </div><br><br>
+                    ASICSs running: <span id="ASICSRunning">0</span>
+                    <div class="btn-group" role="group" aria-label="">
+                        <button type="button" class="btn btn-primary" id="startASICS">Start ASICS</button>
+                        <button type="button" class="btn btn-warning" id="stopASICS">Stop ASICS</button>
+                    </div>
+                </li>
+        </ul>
+
+    </div>
+</body>
+<script src="app.js">
+</script>
+<script>
+    document.write('<script src="http://' + (location.host || '${1:localhost}').split(':')[0] + ':${2:35729}/livereload.js?snipver=1"></' + 'script>')
+</script>
+</html>
